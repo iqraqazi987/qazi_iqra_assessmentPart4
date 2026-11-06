@@ -1,0 +1,28 @@
+/* Mobile-first, no framework. Dead/duplicate rules removed. */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;padding:8px;font-family:system-ui,sans-serif;line-height:1.5;font-size:1rem}
+img{max-width:100%;height:auto}
+header,main,footer{max-width:60rem;margin:0 auto}
+
+.hero{
+  min-height:50vh;display:flex;flex-direction:column;justify-content:center;
+  padding:1rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7);
+  background:#2d5a3d center/cover no-repeat;
+  background-image:url('../img/mobile.jpg');
+  background-image:image-set(url('../img/mobile.webp') type('image/webp'),url('../img/mobile.jpg') type('image/jpeg'));
+}
+@media (min-width:768px){
+  .hero{
+    background-image:url('../img/desktop.jpg');
+    background-image:image-set(url('../img/desktop.webp') type('image/webp'),url('../img/desktop.jpg') type('image/jpeg'));
+  }
+}
+
+form{display:grid;gap:.5rem;max-width:28rem}
+input,button{font:inherit;padding:.75rem;min-height:44px;width:100%} /* 44px = touch target */
+button{cursor:pointer}
+input:user-invalid{border-color:#b00020}
+#formStatus{min-height:1.5em;margin:0}
+
+.video{position:relative;aspect-ratio:16/9;max-width:100%}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}

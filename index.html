@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Explore Alberta Trails | Hiking Trails &amp; Live Weather</title>
+  <meta name="description" content="Explore Alberta hiking trails with live weather and trail updates.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Cache-busting: bump ?v= on every release to force a fresh download -->
+  <link rel="stylesheet" href="css/styles.css?v=1.0.0">
+  <script src="js/main.js?v=1.0.0" defer></script>
+</head>
+<body>
+  <header>
+    <h1>
+      <picture>
+        <source srcset="img/logo.webp" type="image/webp">
+        <img src="img/logo.png" alt="Explore Alberta Trails logo" width="160" height="48">
+      </picture>
+    </h1>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <h2 id="heroTitle">Explore Alberta Trails</h2>
+      <p id="weather" aria-live="polite">Loading current temperature…</p>
+    </section>
+
+    <section aria-labelledby="contactTitle">
+      <h2 id="contactTitle">Get trail updates</h2>
+      <form id="trailForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+
+        <button type="submit">Send</button>
+        <p id="formStatus" role="status"></p>
+      </form>
+    </section>
+
+    <section aria-labelledby="videoTitle">
+      <h2 id="videoTitle">Trail video</h2>
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+                title="Alberta trails video" loading="lazy"
+                allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Explore Alberta Trails</p>
+  </footer>
+</body>
+</html>
