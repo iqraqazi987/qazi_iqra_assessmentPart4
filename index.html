@@ -1,56 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Explore Alberta Trails | Hiking Trails &amp; Live Weather</title>
-  <meta name="description" content="Explore Alberta hiking trails with live weather and trail updates.">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Cache-busting: bump ?v= on every release to force a fresh download -->
-  <link rel="stylesheet" href="css/styles.css?v=1.0.0">
-  <script src="js/main.js?v=1.0.0" defer></script>
+  <meta name="description" content="Explore beginner-friendly Alberta trails, view a Canmore trailhead map, and check current mountain weather.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Explore Alberta Trails">
+  <meta name="theme-color" content="#1f3b2c">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'self' https://api.open-meteo.com; frame-src https://www.openstreetmap.org; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <link rel="canonical" href="./index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Explore Alberta Trails | Trail Map &amp; Live Weather">
+  <meta property="og:description" content="Discover beginner-friendly Alberta hikes, explore a Canmore trailhead map, and check current mountain weather.">
+  <meta property="og:image" content="./img/hero.webp">
+  <meta property="og:url" content="./index.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Explore Alberta Trails | Trail Map &amp; Live Weather">
+  <meta name="twitter:description" content="Discover beginner-friendly Alberta hikes, explore a Canmore trailhead map, and check current mountain weather.">
+  <meta name="twitter:image" content="./img/hero.webp">
+  <meta name="twitter:image:alt" content="Alberta mountain landscape along a hiking trail">
+  <title>Explore Alberta Trails | Trail Map &amp; Live Weather</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="css/style.css?v=1.0.1">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Explore Alberta Trails | Trail Map & Live Weather",
+      "description": "Discover beginner-friendly Alberta hikes, explore a Canmore trailhead map, and check current mountain weather.",
+      "inLanguage": "en-CA",
+      "about": {
+        "@type": "TouristDestination",
+        "name": "Hiking trails in Alberta, Canada"
+      }
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>
-      <picture>
-        <source srcset="img/logo.webp" type="image/webp">
-        <img src="img/logo.png" alt="Explore Alberta Trails logo" width="160" height="48">
-      </picture>
-    </h1>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#top" class="site-header__logo">Explore Alberta Trails</a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#about">About</a></li>
+          <li><a class="site-nav__link" href="#trails">Trails</a></li>
+          <li><a class="site-nav__link" href="#faq">FAQ</a></li>
+          <li><a class="site-nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <h2 id="heroTitle">Explore Alberta Trails</h2>
-      <p id="weather" aria-live="polite">Loading current temperature…</p>
-    </section>
+  <main id="top">
 
-    <section aria-labelledby="contactTitle">
-      <h2 id="contactTitle">Get trail updates</h2>
-      <form id="trailForm" novalidate>
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required>
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required>
-
-        <button type="submit">Send</button>
-        <p id="formStatus" role="status"></p>
-      </form>
-    </section>
-
-    <section aria-labelledby="videoTitle">
-      <h2 id="videoTitle">Trail video</h2>
-      <div class="video">
-        <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
-                title="Alberta trails video" loading="lazy"
-                allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">Trails that start where the prairie meets the Rockies.</h1>
+          <p class="hero__subtitle">Curated day hikes across the Alberta Rockies and foothills.</p>
+          <a href="#trails" class="button">Browse trails</a>
+        </div>
+        <picture class="hero__picture">
+          <source
+            type="image/webp"
+            srcset="img/hero-960.webp 960w, img/hero-1600.webp 1600w, img/hero.webp 3696w"
+            sizes="(min-width: 1024px) 46vw, (min-width: 640px) 44vw, 100vw">
+          <img
+            class="hero__image"
+            src="img/hero.jpeg"
+            srcset="img/hero-960.jpg 960w, img/hero-1600.jpg 1600w, img/hero.jpeg 3696w"
+            sizes="(min-width: 1024px) 46vw, (min-width: 640px) 44vw, 100vw"
+            width="3696"
+            height="2448"
+            alt="Alberta mountain landscape along a hiking trail"
+            fetchpriority="high">
+        </picture>
       </div>
     </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About us</h2>
+        <p>Explore Alberta Trails is a directory of hiking routes with up-to-date trail conditions, built by local guides.</p>
+      </div>
+    </section>
+
+    <section class="trails" id="trails" aria-labelledby="trails-title">
+      <div class="container">
+        <h2 id="trails-title">Popular trails</h2>
+        <div class="trails__grid">
+          <article class="trail-card">
+            <p class="trail-card__difficulty trail-card__difficulty--easy">Easy</p>
+            <h3 class="trail-card__title">Troll Falls</h3>
+            <p class="trail-card__desc">Kananaskis · 3.6 km loop · a gentle walk to a waterfall.</p>
+          </article>
+          <article class="trail-card">
+            <p class="trail-card__difficulty trail-card__difficulty--moderate">Moderate</p>
+            <h3 class="trail-card__title">Grassi Lakes</h3>
+            <p class="trail-card__desc">Canmore · 4.6 km loop · turquoise alpine lakes.</p>
+          </article>
+          <article class="trail-card">
+            <p class="trail-card__difficulty trail-card__difficulty--hard">Hard</p>
+            <h3 class="trail-card__title">Ha Ling Peak</h3>
+            <p class="trail-card__desc">Canmore · 7.6 km return · steep climb, big views.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trail-info" id="trail-info" aria-labelledby="trail-info-title">
+      <div class="container">
+        <h2 id="trail-info-title">Trailhead map and live weather</h2>
+        <p class="trail-info__intro">Plan around the Canmore trailheads and check current conditions before heading out.</p>
+        <div class="trail-info__grid">
+          <section class="map-card" aria-labelledby="map-title">
+            <h3 id="map-title">Canmore trailhead map</h3>
+            <div class="map-card__frame" id="map-frame">
+              <div class="map-card__placeholder">
+                <p>The map is not loaded until you choose to view it. OpenStreetMap will receive your connection details when it loads.</p>
+                <button class="button map-card__load" id="load-map" type="button">Load interactive map</button>
+              </div>
+            </div>
+            <p class="map-card__note">Map provided by OpenStreetMap. <a href="https://www.openstreetmap.org/?mlat=51.089&amp;mlon=-115.359#map=12/51.089/-115.359" target="_blank" rel="noopener noreferrer">Open the map in a new tab</a>.</p>
+          </section>
+          <section class="weather-card" aria-labelledby="weather-title">
+            <h3 id="weather-title">Canmore weather</h3>
+            <p class="weather-card__location">Current conditions near Canmore, Alberta</p>
+            <p class="weather-card__result" id="weather-result" role="status" aria-live="polite" aria-atomic="true">Loading current weather…</p>
+            <p class="weather-card__note">Weather by Open-Meteo. Your browser contacts its service to retrieve this forecast; no API key is used.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">FAQ</h2>
+        <details class="faq__item">
+          <summary>Do I need a park pass?</summary>
+          <p>Most trails in Kananaskis and Banff require a valid pass, sold online or at trailhead kiosks.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Are the trails dog-friendly?</summary>
+          <p>Yes, most trails allow leashed dogs. A few alpine routes recommend leaving pets at home.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact us</h2>
+        <p>Questions or trail suggestions? Email us at <a href="mailto:hello@explorealbertatrails.ca">hello@explorealbertatrails.ca</a></p>
+
+        <form class="enquiry-form" id="enquiry-form" novalidate>
+          <fieldset class="enquiry-form__fields">
+            <legend>Trail enquiry</legend>
+            <p class="enquiry-form__required-note"><span aria-hidden="true">*</span> Required</p>
+
+            <div class="enquiry-form__field">
+              <label for="name">Name <span aria-hidden="true">*</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" required
+                aria-describedby="name-error" placeholder="e.g. Alex Morgan">
+              <span class="enquiry-form__error" id="name-error" aria-live="polite" aria-atomic="true"></span>
+            </div>
+
+            <div class="enquiry-form__field">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" required
+                aria-describedby="email-error" placeholder="you@example.com">
+              <span class="enquiry-form__error" id="email-error" aria-live="polite" aria-atomic="true"></span>
+            </div>
+
+            <div class="enquiry-form__field">
+              <label for="trail-length">Preferred trail length</label>
+              <select id="trail-length" name="trailLength" aria-describedby="trail-length-hint">
+                <option value="">Choose a distance (optional)</option>
+                <option value="under-5-km">Under 5 km</option>
+                <option value="5-to-10-km">5–10 km</option>
+                <option value="over-10-km">Over 10 km</option>
+              </select>
+              <span class="enquiry-form__hint" id="trail-length-hint">Choose the approximate distance you prefer.</span>
+            </div>
+
+            <div class="enquiry-form__field">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="5" maxlength="500" required
+                aria-describedby="message-hint message-error"
+                placeholder="Tell us what you’d like to know (up to 500 characters)."></textarea>
+              <span class="enquiry-form__hint" id="message-hint">Maximum 500 characters.</span>
+              <span class="enquiry-form__error" id="message-error" aria-live="polite" aria-atomic="true"></span>
+            </div>
+          </fieldset>
+
+          <p class="enquiry-form__status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+          <button class="enquiry-form__submit" type="submit">Send enquiry</button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>&copy; 2025 Explore Alberta Trails</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Explore Alberta Trails.</p>
+    </div>
   </footer>
+
+  <script type="module" src="js/script.js?v=1.0.1"></script>
 </body>
 </html>
